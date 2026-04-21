@@ -1,65 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BookHaven - Privacy Policy</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.7;
-            color: #2c2c2c;
-            background: #faf8f5;
-            padding: 40px 20px;
-            max-width: 720px;
-            margin: 0 auto;
-        }
-        h1 {
-            font-size: 28px;
-            margin-bottom: 8px;
-            color: #1a1a1a;
-        }
-        .updated {
-            font-size: 14px;
-            color: #888;
-            margin-bottom: 32px;
-        }
-        h2 {
-            font-size: 20px;
-            margin-top: 32px;
-            margin-bottom: 12px;
-            color: #1a1a1a;
-        }
-        p, li {
-            font-size: 16px;
-            margin-bottom: 12px;
-            color: #444;
-        }
-        ul {
-            padding-left: 24px;
-            margin-bottom: 16px;
-        }
-        li { margin-bottom: 6px; }
-        .highlight {
-            background: #f0ebe4;
-            border-left: 3px solid #b89a6a;
-            padding: 16px 20px;
-            border-radius: 4px;
-            margin: 20px 0;
-        }
-        .highlight p { margin-bottom: 0; }
-        a { color: #b89a6a; }
-        .footer {
-            margin-top: 48px;
-            padding-top: 24px;
-            border-top: 1px solid #e0dcd6;
-            font-size: 14px;
-            color: #999;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BookHaven — Privacy Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --parchment:    #f4ead3;
+    --parchment-2:  #ecdfbf;
+    --ink:          #3a2a1a;
+    --ink-soft:     #5a4632;
+    --ink-faint:    #8a7355;
+    --brass:        #a8854a;
+    --brass-deep:   #8a6a35;
+    --brass-dark:   #6b4f22;
+    --rule:         #c9b287;
+    --oxblood:      #7a2e2a;
+    --oxblood-deep: #5c1f1c;
+    --teal:         #2d4a47;
+    --cream:        #f6ecd4;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    padding: clamp(1.5rem, 5vw, 3rem) clamp(1.1rem, 4.5vw, 2rem);
+    font-family: 'Lora', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--ink);
+    background-color: var(--parchment);
+    /* Very faint paper grain — SVG noise baked in as data URI */
+    background-image:
+      radial-gradient(ellipse at 18% 12%, rgba(168, 133, 74, 0.10), transparent 55%),
+      radial-gradient(ellipse at 82% 88%, rgba(122, 46, 42, 0.06), transparent 60%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.35  0 0 0 0 0.24  0 0 0 0 0.12  0 0 0 0.09 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
+    background-attachment: fixed, fixed, fixed;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: clamp(1.25rem, 4vw, 2.5rem) clamp(1rem, 4vw, 2.25rem) clamp(2rem, 6vw, 3rem);
+  }
+
+  /* Short brass rule above the title */
+  .ornament {
+    width: 56px;
+    height: 1px;
+    margin: 0 auto 1.75rem;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      var(--brass-deep) 50%,
+      transparent 100%
+    );
+  }
+
+  h1 {
+    font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: clamp(2.4rem, 7.5vw, 3.4rem);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: var(--ink);
+    margin: 0 0 0.6rem;
+  }
+
+  h1::after {
+    content: "";
+    display: block;
+    width: 88px;
+    height: 1px;
+    margin: 1.25rem auto 0;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      var(--brass) 20%,
+      var(--brass-deep) 50%,
+      var(--brass) 80%,
+      transparent 100%
+    );
+  }
+
+  .updated {
+    text-align: center;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.02em;
+    margin: 0 0 2.5rem;
+  }
+
+  /* The promise — oxblood leather bookplate with illuminated drop cap */
+  .highlight {
+    position: relative;
+    margin: 2rem 0 3rem;
+    padding: clamp(1.75rem, 5vw, 2.5rem) clamp(1.5rem, 5vw, 2.25rem);
+    background-color: var(--oxblood);
+    background-image:
+      radial-gradient(ellipse at 30% 20%, rgba(255, 220, 180, 0.08), transparent 55%),
+      radial-gradient(ellipse at 70% 85%, rgba(0, 0, 0, 0.25), transparent 60%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.18 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/></svg>");
+    border: 1px solid var(--brass);
+    outline: 1px solid var(--brass-deep);
+    outline-offset: 4px;
+    border-radius: 2px;
+    color: var(--cream);
+  }
+
+  .highlight::before {
+    content: "A Promise";
+    display: block;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-variant: small-caps;
+    font-weight: 600;
+    letter-spacing: 0.32em;
+    font-size: 0.8rem;
+    color: var(--brass);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .highlight p {
+    margin: 0;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.2rem, 4.6vw, 1.45rem);
+    line-height: 1.55;
+    text-align: center;
+    color: var(--cream);
+    font-style: italic;
+    text-wrap: pretty;
+  }
+
+  .highlight p strong {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--cream);
+  }
+
+  h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(1.35rem, 4.5vw, 1.6rem);
+    line-height: 1.25;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    margin: 2.75rem 0 0.75rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--rule);
+    position: relative;
+  }
+
+  /* Diamond markers — rotate through brass, oxblood, teal */
+  h2::before {
+    content: "";
+    position: absolute;
+    top: -4.5px;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background: var(--brass);
+    transform: rotate(45deg);
+    box-shadow: 0 0 0 2px var(--parchment);
+  }
+  h2:nth-of-type(3n+2)::before { background: var(--oxblood); }
+  h2:nth-of-type(3n+3)::before { background: var(--teal); }
+
+  p {
+    margin: 0 0 1.1rem;
+    text-wrap: pretty;
+    hyphens: auto;
+  }
+
+  strong { color: var(--oxblood-deep); font-weight: 600; }
+  em     { color: var(--teal); font-style: italic; }
+
+  ul {
+    margin: 0.25rem 0 1.4rem;
+    padding-left: 1.5rem;
+    list-style: none;
+  }
+
+  ul li {
+    position: relative;
+    padding-left: 0.25rem;
+    margin-bottom: 0.55rem;
+  }
+
+  ul li::before {
+    content: "";
+    position: absolute;
+    left: -1rem;
+    top: 0.78rem;
+    width: 5px;
+    height: 5px;
+    background: var(--brass);
+    border-radius: 50%;
+  }
+
+  a {
+    color: var(--brass-deep);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+  }
+
+  a:hover, a:focus {
+    color: var(--brass-dark);
+    border-bottom-color: var(--brass-dark);
+  }
+
+  .footer {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    text-align: center;
+    border-top: none;
+    position: relative;
+  }
+
+  .footer::before {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 1px;
+    margin: 0 auto 1.25rem;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      var(--brass-deep) 50%,
+      transparent 100%
+    );
+  }
+
+  .footer p {
+    margin: 0;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.01em;
+  }
+
+  /* Mobile tweaks */
+  @media (max-width: 480px) {
+    main { padding-left: 0.25rem; padding-right: 0.25rem; }
+    body { font-size: 16.5px; line-height: 1.72; }
+    .highlight { outline-offset: 3px; }
+  }
+
+  /* Selection color — oxblood ink */
+  ::selection {
+    background: rgba(122, 46, 42, 0.25);
+    color: var(--ink);
+  }
+</style>
 </head>
 <body>
+<main>
+    <div class="ornament" aria-hidden="true"></div>
+
     <h1>Privacy Policy</h1>
     <p class="updated">Last updated: April 20, 2026</p>
 
@@ -121,5 +332,6 @@
     <div class="footer">
         <p>BookHaven &mdash; A private reading sanctuary.</p>
     </div>
+</main>
 </body>
 </html>
