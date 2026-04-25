@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BookHaven — Gizlilik Politikası</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --parchment:    #f4ead3;
+    --parchment-2:  #ecdfbf;
+    --ink:          #3a2a1a;
+    --ink-soft:     #5a4632;
+    --ink-faint:    #8a7355;
+    --brass:        #a8854a;
+    --brass-deep:   #8a6a35;
+    --brass-dark:   #6b4f22;
+    --rule:         #c9b287;
+    --oxblood:      #7a2e2a;
+    --oxblood-deep: #5c1f1c;
+    --teal:         #2d4a47;
+    --cream:        #f6ecd4;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    padding: clamp(1.5rem, 5vw, 3rem) clamp(1.1rem, 4.5vw, 2rem);
+    font-family: 'Lora', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--ink);
+    background-color: var(--parchment);
+    /* Very faint paper grain — SVG noise baked in as data URI */
+    background-image:
+      radial-gradient(ellipse at 18% 12%, rgba(168, 133, 74, 0.10), transparent 55%),
+      radial-gradient(ellipse at 82% 88%, rgba(122, 46, 42, 0.06), transparent 60%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.35  0 0 0 0 0.24  0 0 0 0 0.12  0 0 0 0.09 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
+    background-attachment: fixed, fixed, fixed;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: clamp(1.25rem, 4vw, 2.5rem) clamp(1rem, 4vw, 2.25rem) clamp(2rem, 6vw, 3rem);
+  }
+
+  /* Short brass rule above the title */
+  .ornament {
+    width: 56px;
+    height: 1px;
+    margin: 0 auto 1.75rem;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      var(--brass-deep) 50%,
+      transparent 100%
+    );
+  }
+
+  h1 {
+    font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: clamp(2.4rem, 7.5vw, 3.4rem);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: var(--ink);
+    margin: 0 0 0.6rem;
+  }
+
+  h1::after {
+    content: "";
+    display: block;
+    width: 88px;
+    height: 1px;
+    margin: 1.25rem auto 0;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      var(--brass) 20%,
+      var(--brass-deep) 50%,
+      var(--brass) 80%,
+      transparent 100%
+    );
+  }
+
+  .updated {
+    text-align: center;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.02em;
+    margin: 0 0 2.5rem;
+  }
+
+  /* The promise — oxblood leather bookplate with illuminated drop cap */
+  .highlight {
+    position: relative;
+    margin: 2rem 0 3rem;
+    padding: clamp(1.75rem, 5vw, 2.5rem) clamp(1.5rem, 5vw, 2.25rem);
+    background-color: var(--oxblood);
+    background-image:
+      radial-gradient(ellipse at 30% 20%, rgba(255, 220, 180, 0.08), transparent 55%),
+      radial-gradient(ellipse at 70% 85%, rgba(0, 0, 0, 0.25), transparent 60%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.18 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/></svg>");
+    border: 1px solid var(--brass);
+    outline: 1px solid var(--brass-deep);
+    outline-offset: 4px;
+    border-radius: 2px;
+    color: var(--cream);
+  }
+
+  .highlight::before {
+    content: "Bir Söz";
+    display: block;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-variant: small-caps;
+    font-weight: 600;
+    letter-spacing: 0.32em;
+    font-size: 0.8rem;
+    color: var(--brass);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .highlight p {
+    margin: 0;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.2rem, 4.6vw, 1.45rem);
+    line-height: 1.55;
+    text-align: center;
+    color: var(--cream);
+    font-style: italic;
+    text-wrap: pretty;
+  }
+
+  .highlight p strong {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--cream);
+  }
+
+  h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(1.35rem, 4.5vw, 1.6rem);
+    line-height: 1.25;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    margin: 2.75rem 0 0.75rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--rule);
+    position: relative;
+  }
+
+  /* Diamond markers — rotate through brass, oxblood, teal */
+  h2::before {
+    content: "";
+    position: absolute;
+    top: -4.5px;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background: var(--brass);
+    transform: rotate(45deg);
+    box-shadow: 0 0 0 2px var(--parchment);
+  }
+  h2:nth-of-type(3n+2)::before { background: var(--oxblood); }
+  h2:nth-of-type(3n+3)::before { background: var(--teal); }
+
+  p {
+    margin: 0 0 1.1rem;
+    text-wrap: pretty;
+    hyphens: auto;
+  }
+
+  strong { color: var(--oxblood-deep); font-weight: 600; }
+  em     { color: var(--teal); font-style: italic; }
+
+  ul {
+    margin: 0.25rem 0 1.4rem;
+    padding-left: 1.5rem;
+    list-style: none;
+  }
+
+  ul li {
+    position: relative;
+    padding-left: 0.25rem;
+    margin-bottom: 0.55rem;
+  }
+
+  ul li::before {
+    content: "";
+    position: absolute;
+    left: -1rem;
+    top: 0.78rem;
+    width: 5px;
+    height: 5px;
+    background: var(--brass);
+    border-radius: 50%;
+  }
+
+  a {
+    color: var(--brass-deep);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+  }
+
+  a:hover, a:focus {
+    color: var(--brass-dark);
+    border-bottom-color: var(--brass-dark);
+  }
+
+  .footer {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    text-align: center;
+    border-top: none;
+    position: relative;
+  }
+
+  .footer::before {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 1px;
+    margin: 0 auto 1.25rem;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      var(--brass-deep) 50%,
+      transparent 100%
+    );
+  }
+
+  .footer p {
+    margin: 0;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.01em;
+  }
+
+  /* Mobile tweaks */
+  @media (max-width: 480px) {
+    main { padding-left: 0.25rem; padding-right: 0.25rem; }
+    body { font-size: 16.5px; line-height: 1.72; }
+    .highlight { outline-offset: 3px; }
+  }
+
+  /* Selection color — oxblood ink */
+  ::selection {
+    background: rgba(122, 46, 42, 0.25);
+    color: var(--ink);
+  }
+</style>
+</head>
+<body>
+<main>
+    <div class="ornament" aria-hidden="true"></div>
+
+    <h1>Gizlilik Politikası</h1>
+    <p class="updated">Son güncelleme: 26 Nisan 2026 &middot; <a href="index.html">English</a></p>
+
+    <div class="highlight">
+        <p><strong>BookHaven, kişisel verilerini bizim işlettiğimiz hiçbir sunucuda toplamaz, saklamaz ya da iletmez.</strong> Kütüphanen, okuma ilerlemen ve tercihlerin cihazında kalır. iCloud senkronizasyonunu kullanmayı seçersen verilerin bizim üzerimizden değil, kendi özel Apple iCloud'un üzerinden hareket eder. Biz onları asla göremeyiz.</p>
+    </div>
+
+    <h2>Cihazında kalan veriler</h2>
+    <p>Varsayılan olarak aşağıdaki tüm veriler yerel olarak cihazında saklanır. Hiçbiri BookHaven'ın işlettiği bir sunucuya gönderilmez:</p>
+    <ul>
+        <li>Kitap kütüphanen ve içe aktardığın dosyalar</li>
+        <li>Okuma ilerlemesi, yer imleri ve vurgular</li>
+        <li>Okuma istatistikleri ve seriler</li>
+        <li>Uygulama tercihleri ve ayarları</li>
+        <li>Dinleme geçmişi ve sesli kitap ilerlemesi</li>
+    </ul>
+    <p>iCloud senkronizasyonu açıkken (iCloud'a giriş yaptığında varsayılan olarak açıktır ve <strong>Ayarlar &rsaquo; iCloud Senkronizasyonu</strong> bölümünden kapatabilirsin), bu verilerin bir kısmı Apple cihazların arasında taşınabilmesi için özel iCloud'un üzerinden de akar &mdash; sonraki bölüme bakın.</p>
+
+    <h2>iCloud senkronizasyonu</h2>
+    <p>Cihazında iCloud kullanılabilir olduğunda ve senkronizasyonu kapatmadığında, BookHaven; aynı Apple ID ile oturum açtığın Apple cihazları arasında okuma durumunu eşitlemek için Apple'ın CloudKit çerçevesini kullanır. Bu döngüde bizim sunucumuz yok. Verilerin yalnızca senin ve Apple cihazlarının okuyabileceği <em>özel</em> iCloud veritabanında saklanır; BookHaven içeriği asla görmez.</p>
+    <p>Üç farklı veri katmanı farklı şekilde ele alınır:</p>
+    <ul>
+        <li><strong>Kütüphane, yer imleri, ilerleme, raflar, okuma geçmişi ve senkronize tercihler</strong> &mdash; iCloud senkronizasyonu açık olduğunda otomatik olarak senkronize olur. Varsayılan budur.</li>
+        <li><strong>40 MB altındaki e-kitap dosyaları (EPUB, PDF, MOBI, AZW3, FB2, TXT, RTF)</strong> &mdash; yalnızca <strong>Ayarlar &rsaquo; iCloud Senkronizasyonu &rsaquo; E-Kitap Dosyalarını Senkronize Et</strong> bölümünden açıkça kabul edersen senkronize olur. Düğme varsayılan olarak kapalıdır; her cihazda ayrı ayrı açmayı seçersin. iCloud aktarımlarının güvenilir kalması için 40 MB'dan büyük dosyalar yerel olarak tutulur.</li>
+        <li><strong>Sesli kitap dosyaları</strong> &mdash; iCloud üzerinden asla senkronize edilmez. Sesli kitaplar onları eklediğin cihazda kalır. Eğer onları Dropbox, Google Drive veya OneDrive'dan da içe aktardıysan (aşağıdaki "İsteğe bağlı bulut içe aktarma" bölümüne bak), başka bir cihazda aynı kaynaktan yeniden ekleyebilirsin.</li>
+    </ul>
+    <p>İCloud senkronizasyonunu istediğin zaman <strong>Ayarlar &rsaquo; iCloud Senkronizasyonu</strong> bölümünden tamamen kapatabilirsin. iCloud'a senkronize edilmiş e-kitap dosyalarını aynı ayarlar panelindeki <strong>Senkronize Edilen Dosyaları iCloud'dan Kaldır</strong> eylemiyle kaldırabilirsin. Kitap başına senkronizasyon geçersiz kılmaları (bu kitabı her zaman senkronize et / asla senkronize etme) her kitabın detay görünümünden erişilebilir. İstediğin zaman Ayarlar'dan kütüphanenin tam yerel JSON yedeklemesini de dışa aktarabilirsin &mdash; Apple ID değiştirmeden önce ya da kişisel güvenlik ağı olarak faydalıdır.</p>
+    <p>Apple'ın iCloud hizmeti <a href="https://www.apple.com/legal/privacy/">Apple'ın Gizlilik Politikası</a> tarafından yönetilir. BookHaven, iCloud veritabanının içeriğinden haberdar değildir ve onu görmez.</p>
+
+    <h2>İsteğe bağlı bulut içe aktarma (Dropbox, Google Drive, OneDrive)</h2>
+    <p>Halihazırda Dropbox, Google Drive veya OneDrive'da bulunan kitapları içe aktarmak için isteğe bağlı olarak bir hesap bağlayabilirsin. Kimlik doğrulama için PKCE ile OAuth 2.1 kullanırız; erişim belirteci cihazının anahtar zincirinde kalır ve hiçbir BookHaven sunucusuna iletilmez (zaten böyle bir sunucumuz yok). İçe aktarmalar doğrudan cihaz-bulut sağlayıcısı arasında gerçekleşir. Kütüphaneni iCloud'a senkronize ettiğinde ve BookHaven'ı başka bir cihazda açtığında, bulut hesaplarından gelen dosyalar o cihazda aynı kaynaktan tekrar indirilebilir. <strong>Ayarlar &rsaquo; Bulut Hesapları</strong> bölümünden bir hesabın bağlantısını kestiğinde belirteci anahtar zincirinden hemen silinir.</p>
+
+    <h2>Kapak görseli araması</h2>
+    <p>Bir kitabı içe aktardığında veya kapak görseli seçeneklerine göz attığında, BookHaven eşleşen kapak görselini bulmak için <strong>kitap adını ve yazar adını</strong> herkese açık API'lere (Apple iTunes, Google Books ve Open Library) gönderebilir. Bu isteklerde kişisel bilgi, cihaz tanımlayıcısı veya okuma geçmişi yer almaz.</p>
+
+    <h2>Örnek sesli kitap indirme</h2>
+    <p>BookHaven, Internet Archive'dan (archive.org) <em>A Christmas Carol</em>'un isteğe bağlı tek bir örnek indirmesini sunar &mdash; herkese açık bir LibriVox kaydı. İndir düğmesine dokunmak standart bir HTTPS dosya aktarımını başlatır. Hesap, tanımlayıcı veya okuma geçmişi iletilmez; Internet Archive yalnızca dosya isteğini ve IP adresini görür &mdash; tıpkı sitelerini ziyaret eden başka biri gibi.</p>
+
+    <h2>Satın alımlar</h2>
+    <p>Uygulama içi satın alımlar tamamen Apple tarafından StoreKit aracılığıyla yönetilir. BookHaven kendi ödeme sunucusunu işletmez ve ödeme bilgilerini almaz veya saklamaz. Apple'ın işlem verilerini nasıl ele aldığına dair ayrıntılar için lütfen <a href="https://www.apple.com/legal/privacy/">Apple'ın Gizlilik Politikası</a>'na bakın.</p>
+
+    <h2>Analitik veya takip yok</h2>
+    <p>BookHaven herhangi bir analitik hizmeti, çökme raporlama aracı, reklam SDK'sı veya takip teknolojisi kullanmaz. Çerez yok, cihaz parmak izi yok ve hiçbir şekilde davranışsal takip yapılmaz.</p>
+
+    <h2>Hesap gerekmiyor</h2>
+    <p>BookHaven, uygulamayı kullanmak için hesap oluşturmanı, giriş yapmanı veya herhangi bir kişisel bilgi vermeni gerektirmez.</p>
+
+    <h2>Üçüncü taraf hizmetler</h2>
+    <p>BookHaven yalnızca aşağıdaki üçüncü taraf hizmetleri kullanır ve bunlarla yalnızca ilgili özellik kullanıldığında iletişim kurar:</p>
+    <ul>
+        <li><strong>Apple iCloud (CloudKit)</strong> &mdash; iCloud senkronizasyonu açık olduğunda kütüphanen ve okuma durumun, özel iCloud veritabanında saklanır (Apple'ın gizlilik politikasıyla yönetilir). BookHaven'ın bu verilere görünürlüğü yoktur.</li>
+        <li><strong>Apple StoreKit</strong> &mdash; uygulama içi satın alımları işlemek için (Apple'ın gizlilik politikasıyla yönetilir)</li>
+        <li><strong>Herkese açık kitap API'leri</strong> &mdash; yalnızca kapak görseli için iTunes Search, Google Books ve Open Library (kitap adı ve yazar gönderilir, kişisel veri gönderilmez)</li>
+        <li><strong>Dropbox, Google Drive ve Microsoft OneDrive</strong> &mdash; yalnızca açıkça bir hesap bağlarsan. OAuth belirteçleri cihazında kalır. Sağlayıcı verilerini asla aracılık etmez veya saklamayız.</li>
+        <li><strong>Internet Archive</strong> &mdash; yalnızca isteğe bağlı "Örnek sesli kitap" düğmesine dokunduğunda herkese açık bir LibriVox kaydını indirmek için</li>
+    </ul>
+
+    <h2>Veri saklama</h2>
+    <p>Cihazındaki yerel veriler tamamen senin kontrolünde. Okuma ilerlemesi, yer imleri ve içe aktarılan kitaplar; tek tek kitabı silmediğin, uygulamayı sıfırlamadığın ya da BookHaven'ı tümüyle silmediğin sürece (silmek tüm yerel verileri kaldırır) kalır. Deneme başlangıç tarihini kaydeden anahtar zinciri girişi, uygulama silindiğinde temizlenir.</p>
+    <p>İCloud'a senkronize edilen veriler standart iOS veri yönetimi araçlarıyla senin tarafından kontrol edilir. BookHaven'ı bir cihazdan silmek, iOS'un iCloud verilerini de silmek isteyip istemediğini sormasını sağlar; evet seçildiğinde iCloud kopyası tüm Apple cihazlarından kaldırılır. Ayrıca yalnızca iCloud'a senkronize edilen e-kitap dosyalarını (üst veriyi, yer imlerini ve ilerlemeyi koruyarak) <strong>Ayarlar &rsaquo; iCloud Senkronizasyonu &rsaquo; Senkronize Edilen Dosyaları iCloud'dan Kaldır</strong> bölümünden kaldırabilirsin.</p>
+
+    <h2>Çocukların gizliliği</h2>
+    <p>BookHaven, 13 yaşın altındaki çocuklar dahil hiç kimseden bilerek kişisel bilgi toplamaz.</p>
+
+    <h2>Açık kaynak teşekkürleri</h2>
+    <p>BookHaven, açık kaynak kütüphaneler, yazı tipleri ve ses öğeleri üzerinde geliştirilmiştir. Tam atıf, lisans koşulları ve üst projelerin bağlantıları uygulama içinde <strong>Destek &rsaquo; Açık Kaynak</strong> bölümünde mevcuttur.</p>
+
+    <h2>Gelecekteki değişiklikler</h2>
+    <p>BookHaven'ın veri uygulamaları değişirse &mdash; örneğin gelecek bir sürümde analitik, reklamcılık veya yeni üçüncü taraf entegrasyonlar eklenirse &mdash; bu politika, ilgili özellik kullanıma sunulmadan önce neyin değiştiğini açıklayacak şekilde güncellenecektir. Önemli değişiklikler uygulama içinde veya App Store güncelleme notları aracılığıyla bildirilecektir.</p>
+
+    <h2>İletişim</h2>
+    <p>Bu politikaya veya verilerine ilişkin sorular <a href="mailto:support@bookhaven.app">support@bookhaven.app</a> adresine gönderilebilir.</p>
+
+    <h2>Bu politikadaki değişiklikler</h2>
+    <p>Bu gizlilik politikası değişirse, güncellenmiş sürüm en üstte yeni bir "Son güncelleme" tarihi ile bu URL'de yayınlanacaktır. Değişikliklerden sonra uygulamanın kullanılmaya devam edilmesi, güncellenen politikanın kabul edildiği anlamına gelir.</p>
+
+    <div class="footer">
+        <p>BookHaven &mdash; Özel bir okuma sığınağı.</p>
+    </div>
+</main>
+</body>
+</html>

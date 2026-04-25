@@ -272,14 +272,14 @@
     <div class="ornament" aria-hidden="true"></div>
 
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: April 20, 2026</p>
+    <p class="updated">Last updated: April 26, 2026 &middot; <a href="tr.html">Türkçe</a></p>
 
     <div class="highlight">
-        <p><strong>BookHaven does not collect, store, or transmit your personal data.</strong> Your library, reading progress, and preferences stay on your device.</p>
+        <p><strong>BookHaven does not collect, store, or transmit your personal data to any server we operate.</strong> Your library, reading progress, and preferences live on your device. If you choose to use iCloud sync, your data travels through your private Apple iCloud &mdash; not through us. We never see it.</p>
     </div>
 
     <h2>What stays on your device</h2>
-    <p>All of the following data is stored locally on your device and is never sent to any server:</p>
+    <p>By default, all of the following data is stored locally on your device. None of it is sent to any server BookHaven operates:</p>
     <ul>
         <li>Your book library and imported files</li>
         <li>Reading progress, bookmarks, and highlights</li>
@@ -287,6 +287,21 @@
         <li>App preferences and settings</li>
         <li>Listening history and audiobook progress</li>
     </ul>
+    <p>If iCloud sync is enabled (it is by default when you are signed into iCloud, and you can turn it off in <strong>Settings &rsaquo; iCloud Sync</strong>), some of this data also flows through your private iCloud so it can travel across your Apple devices &mdash; see the next section.</p>
+
+    <h2>iCloud sync</h2>
+    <p>When iCloud is available on your device and you have not turned sync off, BookHaven uses Apple's CloudKit framework to keep your reading state in step across the Apple devices you sign into with the same Apple ID. We have no servers in this loop. Your data is stored in your <em>private</em> iCloud database, which only you and your Apple devices can read; BookHaven never sees the contents.</p>
+    <p>Three tiers of data are handled differently:</p>
+    <ul>
+        <li><strong>Library, bookmarks, progress, shelves, reading history, sync-tier preferences</strong> &mdash; sync automatically when iCloud sync is on. This is the default.</li>
+        <li><strong>Ebook files (EPUB, PDF, MOBI, AZW3, FB2, TXT, RTF) under 40 MB</strong> &mdash; sync only if you explicitly opt in via <strong>Settings &rsaquo; iCloud Sync &rsaquo; Sync Ebook Files</strong>. The toggle is off by default; you choose to turn it on per device. Files over 40 MB are kept local so iCloud transfers stay reliable.</li>
+        <li><strong>Audiobook files</strong> &mdash; never sync via iCloud. Audiobooks stay on the device where you added them. If you also imported them from Dropbox, Google Drive, or OneDrive (see "Optional cloud import" below), you can re-add them on another device from the same source.</li>
+    </ul>
+    <p>You can turn iCloud sync off entirely at any time via <strong>Settings &rsaquo; iCloud Sync</strong>. You can remove ebook files already synced to iCloud via the <strong>Remove Synced Files from iCloud</strong> action in the same settings panel. Per-book sync overrides (always sync this book / never sync this book) are available from each book's detail view. You can also export a complete local JSON backup of your library at any time from Settings &mdash; useful before switching Apple IDs or as a personal safety net.</p>
+    <p>Apple's iCloud is governed by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>. BookHaven is not informed of and does not see the contents of your iCloud database.</p>
+
+    <h2>Optional cloud import (Dropbox, Google Drive, OneDrive)</h2>
+    <p>You can optionally connect a Dropbox, Google Drive, or OneDrive account to import books that already live there. We use OAuth 2.1 with PKCE to authenticate; the access token stays on your device's keychain and is never transmitted to any BookHaven server (we don't have one). Imports happen device-to-cloud-provider directly. If you sync your library to iCloud and then open BookHaven on another device, files that came from your cloud accounts can be re-downloaded from the same source on that device. Disconnecting an account in <strong>Settings &rsaquo; Cloud Accounts</strong> deletes its token from the keychain immediately.</p>
 
     <h2>Cover art lookup</h2>
     <p>When you import a book or browse cover art options, BookHaven may send the <strong>book title and author name</strong> to public APIs (Apple iTunes, Google Books, and Open Library) to find matching cover artwork. No personal information, device identifiers, or reading history is included in these requests.</p>
@@ -306,13 +321,16 @@
     <h2>Third-party services</h2>
     <p>BookHaven uses only the following third-party services, and contacts them only when the relevant feature is used:</p>
     <ul>
+        <li><strong>Apple iCloud (CloudKit)</strong> &mdash; when iCloud sync is enabled, your library and reading state are stored in your private iCloud database (governed by Apple's privacy policy). BookHaven has no visibility into this data.</li>
         <li><strong>Apple StoreKit</strong> &mdash; for processing in-app purchases (governed by Apple's privacy policy)</li>
         <li><strong>Public book APIs</strong> &mdash; iTunes Search, Google Books, and Open Library for cover art only (book title and author sent, no personal data)</li>
+        <li><strong>Dropbox, Google Drive, and Microsoft OneDrive</strong> &mdash; only if you explicitly connect an account. OAuth tokens stay on your device. We never proxy or store your provider data.</li>
         <li><strong>Internet Archive</strong> &mdash; only when you tap the optional "Sample audiobook" button to download a public LibriVox recording</li>
     </ul>
 
     <h2>Data retention</h2>
-    <p>Because all of your data stays on your device, retention is controlled entirely by you. Reading progress, bookmarks, and imported books remain until you delete the individual book, reset the app, or delete BookHaven itself &mdash; which removes everything. The keychain entry that records your trial start date is cleared when the app is deleted.</p>
+    <p>Local data on your device is controlled entirely by you. Reading progress, bookmarks, and imported books remain until you delete the individual book, reset the app, or delete BookHaven itself &mdash; which removes everything local. The keychain entry that records your trial start date is cleared when the app is deleted.</p>
+    <p>Data synced to your iCloud is controlled by you through the standard iOS data management tools. Deleting BookHaven from a device prompts iOS to ask whether you also want to delete its iCloud data; choosing yes removes the iCloud copy across all your Apple devices. You can also remove only the ebook files synced to iCloud (keeping metadata, bookmarks, and progress) via <strong>Settings &rsaquo; iCloud Sync &rsaquo; Remove Synced Files from iCloud</strong>.</p>
 
     <h2>Children's privacy</h2>
     <p>BookHaven does not knowingly collect any personal information from anyone, including children under the age of 13.</p>
@@ -321,7 +339,7 @@
     <p>BookHaven is built on open-source libraries, typefaces, and sound assets. Full attribution, license terms, and links to upstream projects are available in the app at <strong>Support &rsaquo; Open Source</strong>.</p>
 
     <h2>Future changes</h2>
-    <p>BookHaven does not currently sync your library across devices. If iCloud sync is added in a future release, this policy will be updated to describe what data syncs through Apple's iCloud service (governed by Apple's privacy policy) and how to opt out. Sync, if added, will always be optional.</p>
+    <p>If BookHaven's data practices change &mdash; for example, if a future release adds analytics, advertising, or new third-party integrations &mdash; this policy will be updated to describe what changed before that feature ships. Material changes will be flagged in-app or via the App Store update notes.</p>
 
     <h2>Contact</h2>
     <p>Questions about this policy or your data can be sent to <a href="mailto:support@bookhaven.app">support@bookhaven.app</a>.</p>
