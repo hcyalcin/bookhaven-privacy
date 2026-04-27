@@ -313,22 +313,30 @@
     <p>In-app purchases are handled entirely by Apple through StoreKit. BookHaven does not operate its own payment server and does not receive or store your payment information. Please refer to <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a> for details on how Apple handles transaction data.</p>
 
     <h2>Advertising</h2>
-    <p>After your seven-day welcome gift expires, BookHaven shows ads in transitional surfaces &mdash; brief banners on the Discover and Stats screens, and short interstitials between certain transitions (when you open a book, return to the app after being away for more than ten minutes, or move from your haven to Discover). Ads <strong>never</strong> appear during reading, audiobook playback, or in your haven, library, or relax mode. You can remove ads entirely at any time by subscribing to <strong>Ad-Free Membership</strong> from the Shop or Settings.</p>
-    <p>Ads are served by Google's <strong>AdMob</strong> service. AdMob is a third party; their handling of ad-request data is governed by <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. AdMob receives only the technical information it needs to serve and measure ads &mdash; for example, your device type, IP address, ad-request timestamp, coarse country-level location, and an Apple-managed identifier (the IDFA) <em>only</em> if you previously allowed tracking via the iOS dialog described below. AdMob does <strong>not</strong> receive your reading history, bookmarks, library contents, or any in-app behavior beyond the fact that an ad was requested.</p>
+    <p>BookHaven's free tier is supported by ads. After your seven-day welcome gift expires, brief banners appear on the Discover and Stats screens, and short interstitials appear at a few specific transitions (opening a book, returning to the app after more than ten minutes away, or moving from your haven to Discover). Ads <strong>never</strong> appear during reading, audiobook playback, or in your haven, library, or relax mode &mdash; the surfaces that make BookHaven what it is. You can subscribe to <strong>Ad-Free Membership</strong> at any time to remove ads entirely.</p>
+    <p>Ads are served by Google's <strong>AdMob</strong>. <strong>BookHaven itself does not collect, aggregate, store, or proxy any ad data.</strong> We have no server. Each ad request is between your device and AdMob; we don't see who saw which ad. The only ad-related state stored on your device is a timestamp for the fifteen-minute cool-down between interstitials and a counter for the optional rewarded-video reward. The thirty-minute ad-free unlock (if you've banked one) does sync across your Apple devices via iCloud so the unlock travels with you.</p>
+    <p>What AdMob receives, per ad request:</p>
+    <ul>
+        <li>Device type and operating system</li>
+        <li>IP address &mdash; used by AdMob for fraud detection and country-level ad targeting</li>
+        <li>The timestamp of the ad request</li>
+        <li>An Apple-managed identifier (the IDFA) <em>only</em> if you allow tracking via the iOS dialog described below</li>
+    </ul>
+    <p>What AdMob never receives: your reading history, your bookmarks, what books are in your library, or any in-app behavior beyond "an ad was requested." AdMob's handling of the data they do receive is governed by <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</p>
 
     <h2>Ad measurement (App Tracking Transparency)</h2>
-    <p>The first time an ad is about to appear, BookHaven asks iOS to show the standard <strong>App Tracking Transparency</strong> dialog. This dialog asks whether ads in BookHaven can use limited cross-app measurement (an Apple-managed identifier called the IDFA) to gauge whether ads are working. Either choice is fine:</p>
+    <p>The first time you'd see an interstitial, BookHaven asks iOS to show the standard <strong>App Tracking Transparency</strong> dialog. iOS asks whether BookHaven can use limited cross-app measurement (the IDFA, an Apple-managed identifier) to gauge whether ads are working. Either choice is fine and we don't penalize you for declining:</p>
     <ul>
-        <li><strong>Allow</strong>: BookHaven and AdMob may use the IDFA to measure ad performance. The IDFA is an opaque, resettable identifier managed by iOS &mdash; you can reset or revoke it at any time in <strong>iOS Settings &rsaquo; Privacy &amp; Security &rsaquo; Tracking</strong>.</li>
-        <li><strong>Don't Allow</strong>: BookHaven and AdMob do not use the IDFA. Ads still appear, but measurement uses Apple's privacy-preserving SKAdNetwork instead. Ad revenue per impression may be lower; the experience is otherwise identical.</li>
+        <li><strong>Allow</strong>: BookHaven and AdMob use the IDFA to measure ad performance. The IDFA is opaque, resettable, and entirely managed by iOS &mdash; you can reset or revoke it any time in <strong>iOS Settings &rsaquo; Privacy &amp; Security &rsaquo; Tracking</strong>.</li>
+        <li><strong>Don't Allow</strong>: BookHaven and AdMob don't use the IDFA. Ads still appear; measurement falls back to Apple's privacy-preserving SKAdNetwork system. The reading experience is identical.</li>
     </ul>
-    <p>If you are in the European Economic Area, the United Kingdom, or Switzerland, BookHaven additionally presents Google's <strong>User Messaging Platform</strong> consent form (required by EU and UK GDPR) before ads load on first launch. You can revisit your consent choice at any time via <strong>Settings &rsaquo; Privacy &rsaquo; Manage Ad Privacy Choices</strong>.</p>
+    <p>If you're in the European Economic Area, the United Kingdom, or Switzerland, you'll also see Google's <strong>User Messaging Platform</strong> consent form on first launch (required by GDPR). This is a separate prompt from the iOS ATT dialog &mdash; UMP fires at app launch, ATT fires at the first interstitial. You can revisit your UMP consent choice any time via <strong>Settings &rsaquo; Privacy &rsaquo; Manage Ad Privacy Choices</strong>.</p>
 
     <h2>Rewarded ads (optional)</h2>
-    <p>You can choose to watch two short rewarded videos to bank thirty minutes of ad-free reading. This is entirely optional and triggered only by your tap on <strong>Settings &rsaquo; Bank Quiet Time &rsaquo; Watch 2 videos now</strong>. The same data principles apply &mdash; AdMob serves the videos, the IDFA is used only if you previously allowed tracking, and your reading content is not shared.</p>
+    <p>You can choose to watch two short rewarded videos to bank thirty minutes of ad-free reading. This is entirely opt-in &mdash; nothing fires unless you tap <strong>Settings &rsaquo; Bank Quiet Time &rsaquo; Watch 2 videos now</strong>. The data flow is the same as banner and interstitial ads: AdMob serves the videos, IDFA is used only if you previously allowed tracking, and BookHaven doesn't see or store any data about the ad content itself.</p>
 
     <h2>No analytics or behavioral tracking</h2>
-    <p>Beyond the ad-related data described above, BookHaven does not use any analytics services, crash reporting tools, or behavioral tracking. There are no cookies and no device fingerprinting outside the iOS-managed IDFA (when you allow it).</p>
+    <p>BookHaven uses no analytics services, crash reporting tools, or behavioral tracking outside of what's described in the sections above. No cookies. No device fingerprinting beyond the iOS-managed IDFA (and only when you allow it). No usage analytics that we collect or aggregate ourselves.</p>
 
     <h2>No account required</h2>
     <p>BookHaven does not require you to create an account, sign in, or provide any personal information to use the app.</p>
