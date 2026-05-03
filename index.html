@@ -272,7 +272,7 @@
     <div class="ornament" aria-hidden="true"></div>
 
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: April 27, 2026 &middot; <a href="tr.html">Türkçe</a></p>
+    <p class="updated">Last updated: May 3, 2026 &middot; <a href="tr.html">Türkçe</a></p>
 
     <div class="highlight">
         <p><strong>BookHaven does not collect, store, or transmit your personal data to any server we operate.</strong> Your library, reading progress, and preferences live on your device. If you choose to use iCloud sync, your data travels through your private Apple iCloud &mdash; not through us. We never see it.</p>
@@ -287,17 +287,17 @@
         <li>App preferences and settings</li>
         <li>Listening history and audiobook progress</li>
     </ul>
-    <p>If iCloud sync is enabled (it is by default when you are signed into iCloud, and you can turn it off in <strong>Settings &rsaquo; iCloud Sync</strong>), some of this data also flows through your private iCloud so it can travel across your Apple devices &mdash; see the next section.</p>
+    <p>If you turn on iCloud sync via <strong>Settings &rsaquo; iCloud Sync (Beta)</strong>, some of this data also flows through your private iCloud so it can travel across your Apple devices &mdash; see the next section.</p>
 
-    <h2>iCloud sync</h2>
-    <p>When iCloud is available on your device and you have not turned sync off, BookHaven uses Apple's CloudKit framework to keep your reading state in step across the Apple devices you sign into with the same Apple ID. We have no servers in this loop. Your data is stored in your <em>private</em> iCloud database, which only you and your Apple devices can read; BookHaven never sees the contents.</p>
+    <h2>iCloud sync (Beta in v1.0)</h2>
+    <p>For v1.0, iCloud sync ships as <strong>opt-in beta and is off by default</strong>. You can turn it on at any time in <strong>Settings &rsaquo; iCloud Sync (Beta)</strong>. When on, BookHaven uses Apple's CloudKit framework to keep your reading state in step across the Apple devices you sign into with the same Apple ID. We have no servers in this loop. Your data is stored in your <em>private</em> iCloud database, which only you and your Apple devices can read; BookHaven never sees the contents.</p>
     <p>Three tiers of data are handled differently:</p>
     <ul>
-        <li><strong>Library, bookmarks, progress, shelves, reading history, sync-tier preferences</strong> &mdash; sync automatically when iCloud sync is on. This is the default.</li>
+        <li><strong>Library, bookmarks, progress, shelves, reading history, sync-tier preferences</strong> &mdash; sync automatically when iCloud sync is turned on (v1.0 ships with this off; you opt in via Settings).</li>
         <li><strong>Ebook files (EPUB, PDF, MOBI, AZW3, FB2, TXT, RTF) under 40 MB</strong> &mdash; sync only if you explicitly opt in via <strong>Settings &rsaquo; iCloud Sync &rsaquo; Sync Ebook Files</strong>. The toggle is off by default; you choose to turn it on per device. Files over 40 MB are kept local so iCloud transfers stay reliable.</li>
         <li><strong>Audiobook files</strong> &mdash; never sync via iCloud. Audiobooks stay on the device where you added them. If you also imported them from Dropbox, Google Drive, or OneDrive (see "Optional cloud import" below), you can re-add them on another device from the same source.</li>
     </ul>
-    <p>You can turn iCloud sync off entirely at any time via <strong>Settings &rsaquo; iCloud Sync</strong>. You can remove ebook files already synced to iCloud via the <strong>Remove Synced Files from iCloud</strong> action in the same settings panel. Per-book sync overrides (always sync this book / never sync this book) are available from each book's detail view. You can also export a complete local JSON backup of your library at any time from Settings &mdash; useful before switching Apple IDs or as a personal safety net.</p>
+    <p>You can turn iCloud sync on or off at any time via <strong>Settings &rsaquo; iCloud Sync (Beta)</strong>. You can remove ebook files already synced to iCloud via the <strong>Remove Synced Files from iCloud</strong> action in the same settings panel. Per-book sync overrides (always sync this book / never sync this book) are available from each book's detail view. You can also export a complete local JSON backup of your library at any time from Settings &mdash; useful before switching Apple IDs or as a personal safety net.</p>
     <p>Apple's iCloud is governed by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>. BookHaven is not informed of and does not see the contents of your iCloud database.</p>
 
     <h2>Optional cloud import (Dropbox, Google Drive, OneDrive)</h2>
