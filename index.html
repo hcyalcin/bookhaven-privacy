@@ -272,7 +272,7 @@
     <div class="ornament" aria-hidden="true"></div>
 
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: July 7, 2026 &middot; <a href="tr.html">Türkçe</a></p>
+    <p class="updated">Last updated: July 15, 2026 &middot; <a href="tr.html">Türkçe</a></p>
 
     <div class="highlight">
         <p><strong>BookHaven does not collect, store, or transmit your personal data to any server we operate.</strong> Your library, reading progress, and preferences live on your device. If you choose to use iCloud sync, your data travels through your private Apple iCloud &mdash; not through us. We never see it.</p>
@@ -314,15 +314,16 @@
 
     <h2>Advertising</h2>
     <p>BookHaven's free tier is supported by ads. After your seven-day welcome gift expires, brief banners appear on the Discover and Stats screens, and short interstitials appear at a few specific transitions (opening a book, returning to the app after more than ten minutes away, or moving from your haven to Discover). Ads <strong>never</strong> appear during reading, audiobook playback, or in your haven, library, or relax mode &mdash; the surfaces that make BookHaven what it is. You can subscribe to <strong>Ad-Free Membership</strong> at any time to remove ads entirely.</p>
-    <p>Ads are served by Google's <strong>AdMob</strong>. <strong>BookHaven itself does not collect, aggregate, store, or proxy any ad data.</strong> We have no server. Each ad request is between your device and AdMob; we don't see who saw which ad. The only ad-related state stored on your device is a timestamp for the fifteen-minute cool-down between interstitials and a counter for the optional rewarded-video reward. Any ad-free time you've banked from rewarded videos does sync across your Apple devices via iCloud, so it travels with you.</p>
-    <p>What AdMob receives, per ad request:</p>
+    <p>Ads are served by Google's <strong>AdMob</strong>. <strong>BookHaven does not operate an ad-data server or independently receive, aggregate, store, or proxy Google's SDK telemetry.</strong> Each ad request is between your device and AdMob; we don't see who saw which ad. BookHaven stores limited scheduling and reward state, including the last-interstitial timestamp, the ad-free-until timestamp, and a reward-cap lockout flag. Any ad-free time you've banked from rewarded videos does sync across your Apple devices via iCloud, so it travels with you.</p>
+    <p>Depending on your region, permissions, consent choices, and use of ad-supported features, the Google Mobile Ads SDK may collect:</p>
     <ul>
-        <li>Device type and operating system</li>
-        <li>IP address &mdash; used by AdMob for fraud detection and country-level ad targeting</li>
-        <li>The timestamp of the ad request</li>
-        <li>An Apple-managed identifier (the IDFA) <em>only</em> if you allow tracking via the iOS dialog described below</li>
+        <li>IP address, which may be used to estimate your general location</li>
+        <li>Device and operating-system information; app- or developer-bounded device identifiers; and the IDFA <em>only</em> if you allow tracking via the iOS dialog described below</li>
+        <li>Advertising data, such as advertisements shown and ad-request or impression timestamps</li>
+        <li>Product interaction data, such as app launches, taps, and rewarded-video views</li>
+        <li>Crash logs, performance data such as app launch time, hang rate, or energy usage, and other diagnostic information</li>
     </ul>
-    <p>What AdMob never receives: your reading history, your bookmarks, what books are in your library, or any in-app behavior beyond "an ad was requested." AdMob's handling of the data they do receive is governed by <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</p>
+    <p>Depending on the category, Google may use this information for third-party advertising, analytics, developer advertising or marketing, and app functionality such as ad delivery, consent handling, fraud prevention, reliability, and performance. BookHaven does not send Google your book files, library contents, book titles or authors, reading or listening history, reading progress, bookmarks, highlights, or notes. Google's handling of the data it receives is governed by <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. BookHaven's App Store privacy label summarizes the data categories and purposes declared for BookHaven.</p>
 
     <h2>Ad measurement (App Tracking Transparency)</h2>
     <p>The first time you'd see an interstitial, BookHaven asks iOS to show the standard <strong>App Tracking Transparency</strong> dialog. iOS asks whether BookHaven can use limited cross-app measurement (the IDFA, an Apple-managed identifier) to gauge whether ads are working. Either choice is fine and we don't penalize you for declining:</p>
@@ -335,8 +336,8 @@
     <h2>Rewarded ads (optional)</h2>
     <p>You can choose to watch a short rewarded video to bank fifteen minutes of ad-free reading, and watch more to stack up to an hour. This is entirely opt-in: nothing fires unless you ask for it, either from the <strong>Get ad-free time</strong> pill on the Discover and Stats screens or from <strong>Settings &rsaquo; Earn Ad-Free Time</strong>. The data flow is the same as banner and interstitial ads: AdMob serves the videos, IDFA is used only if you previously allowed tracking, and BookHaven doesn't see or store any data about the ad content itself.</p>
 
-    <h2>No analytics or behavioral tracking</h2>
-    <p>BookHaven uses no analytics services, crash reporting tools, or behavioral tracking outside of what's described in the sections above. No cookies. No device fingerprinting beyond the iOS-managed IDFA (and only when you allow it). No usage analytics that we collect or aggregate ourselves.</p>
+    <h2>No BookHaven reading analytics</h2>
+    <p>BookHaven does not operate its own analytics or crash-reporting service, and we do not collect or aggregate analytics about your library, reading, or listening. The Google advertising SDK's advertising, product-interaction, and diagnostic telemetry is disclosed above. BookHaven does not set first-party cookies or perform device fingerprinting of its own. Google's advertising services may use technologies described in Google's Privacy Policy, subject to your consent choices and platform controls.</p>
 
     <h2>No account required</h2>
     <p>BookHaven does not require you to create an account, sign in, or provide any personal information to use the app.</p>
@@ -346,12 +347,13 @@
     <ul>
         <li><strong>Apple iCloud (CloudKit)</strong> &mdash; when iCloud sync is enabled, your library and reading state are stored in your private iCloud database (governed by Apple's privacy policy). BookHaven has no visibility into this data.</li>
         <li><strong>Apple StoreKit</strong> &mdash; for processing in-app purchases (governed by Apple's privacy policy)</li>
-        <li><strong>Google AdMob</strong> &mdash; serves banner, interstitial, and rewarded ads on the free tier after your welcome gift expires. Receives technical ad-request information (device type, IP address, country, ad timestamp, IDFA when allowed via ATT). Governed by <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</li>
+        <li><strong>Google AdMob</strong> &mdash; serves banner, interstitial, and rewarded ads on the free tier after your welcome gift expires. May collect the advertising, device, interaction, location, crash, performance, and diagnostic information described in the Advertising section. Governed by <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</li>
         <li><strong>Google User Messaging Platform (UMP)</strong> &mdash; presents the GDPR consent form to users in the EEA, UK, or Switzerland on first launch. Free Google service used solely for legal consent collection.</li>
         <li><strong>Public book APIs</strong> &mdash; iTunes Search, Google Books, and Open Library for cover art only (book title and author sent, no personal data)</li>
         <li><strong>Dropbox, Google Drive, and Microsoft OneDrive</strong> &mdash; only if you explicitly connect an account. OAuth tokens stay on your device. We never proxy or store your provider data.</li>
         <li><strong>Internet Archive</strong> &mdash; only when you tap the optional "Sample audiobook" button to download a public LibriVox recording</li>
     </ul>
+    <p>Any third party that receives data through BookHaven is required to provide the same or equivalent protection for that data as this policy and Apple's App Review Guidelines require. Each service remains responsible for its own processing under its linked privacy policy and applicable law.</p>
 
     <h2>Data retention</h2>
     <p>Local data on your device is controlled entirely by you. Reading progress, bookmarks, and imported books remain until you delete the individual book, reset the app, or delete BookHaven itself &mdash; which removes everything local. One exception: the small keychain entry that records your welcome gift's start date persists even if you delete the app — it's what keeps the seven-day gift from restarting on a reinstall — and if you use iCloud Keychain, Apple may sync it between your own devices. It contains a single date, nothing about you or your books, and it never reaches us.</p>
